@@ -18,7 +18,7 @@ namespace CLIMATE_DATA_BRAZIL.Controllers
             return View();
         }
 
-        public IActionResult ClimatePage()
+        public IActionResult WeatherPage()
         {
             return View();
         }

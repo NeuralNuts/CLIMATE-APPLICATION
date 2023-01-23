@@ -6,12 +6,25 @@
 .first-div {
     display: inline-block;
     width: 99.6%;
-    height: 100%;
     position: center;
     border: solid;
     border-color: white;
     background-color: white;
     margin-top: 5%;
     border-radius: 10px;
-    padding-bottom: 48%;
+}
+
+textarea {
+    margin-left: 10px;
+}
+
+button {
+}
+
+h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: Arial;
+    color: #e11e69d9;
+    padding-left: 10px;
 }
