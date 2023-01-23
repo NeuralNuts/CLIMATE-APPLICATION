@@ -31,8 +31,9 @@ p {
 }
 
 hr {
-    border-color: #e11e69d9;
     text-align: center;
+    border: solid;
+    border-color: #e11e69d9;
     width: 100vh;
     border-width: 1.5px;
 }
