@@ -23,6 +23,16 @@ namespace CLIMATE_DATA_BRAZIL.Controllers
             return View();
         }
 
+        public IActionResult AboutPage()
+        {
+            return View();
+        }
+
+        public IActionResult LoginPage()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

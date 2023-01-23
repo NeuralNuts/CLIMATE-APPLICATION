@@ -29,8 +29,9 @@ header {
 .logo {
     margin-top: -7px;
     text-transform: uppercase;
-    padding-right: 70%;
     color: whitesmoke;
+    width: 250vh;
+    margin-left: -122vh;
     cursor: pointer;
 }
 

@@ -1,0 +1,38 @@
+﻿body {
+    background-image: none;
+    background-color: #d1d1d176;
+}
+
+.first-div {
+    display: inline-block;
+    width: 99.6%;
+    position: center;
+    border: solid;
+    border-color: white;
+    background-color: white;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: Arial;
+    color: #e11e69d9;
+    padding-left: 10px;
+}
+
+p {
+    text-align: center;
+    margin-top: -20px;
+    padding-left: 10px;
+    font-family: Arial;
+}
+
+hr {
+    border-color: #e11e69d9;
+    text-align: center;
+    width: 100vh;
+    border-width: 1.5px;
+}
