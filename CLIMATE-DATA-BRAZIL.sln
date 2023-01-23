@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLIMATE-DATA-BRAZIL", "CLIMATE-DATA-BRAZIL.csproj", "{3BA36A64-41BA-4F29-B38B-1A3420F1DCB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BA36A64-41BA-4F29-B38B-1A3420F1DCB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BA36A64-41BA-4F29-B38B-1A3420F1DCB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BA36A64-41BA-4F29-B38B-1A3420F1DCB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BA36A64-41BA-4F29-B38B-1A3420F1DCB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6EB09F3-F4B3-42F0-8F39-1107B51341D1}
+	EndGlobalSection
+EndGlobal

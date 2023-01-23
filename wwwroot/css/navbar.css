@@ -1,0 +1,55 @@
+﻿body {
+    background-image: url("../images/world-map.png");
+    background-color: whitesmoke;
+    background-size: cover;
+    background-position-y: -180px;
+    background-position-x: -50px;
+}
+
+header {
+    position: fixed;
+    background-color: #1EE196;
+    width: 100%;
+    max-width: 100%;
+    height: 60px;
+    border: solid;
+    border-color: #23835e33;
+    margin-left: -10px;
+    margin-right: 0px;
+    margin-top: -20px;
+    text-align: center;
+}
+
+.nav-bar {
+    display: flex;
+    list-style-type: none;
+    font-family: Arial;
+}
+
+.logo {
+    margin-top: -7px;
+    text-transform: uppercase;
+    padding-right: 70%;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.logo:hover {
+    text-shadow: 0px 0 5px white;
+}
+
+header ul li {
+    padding-right: 20px;
+    padding-top: 8px;
+    margin-right: 0px;
+}
+
+header ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+header ul li a:hover {
+    text-shadow: 0px 0 5px white;
+}
