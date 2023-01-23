@@ -36,6 +36,15 @@ namespace CLIMATE_DATA_BRAZIL.Controllers
             return await _mongodbServices.GetWeatherAsync();
         }
         #endregion
+
+        #region Http Post Weather
+        [HttpPost]
+        public async Task<IActionResult> PostWeather(WeatherModel weatherModel)
+        {
+            await _mongodbServices.CreateWeatherAsync(weatherModel);
+            return CreatedAtAction(nameof(GetWeather), new { id = weatherModel.Id }, weatherModel);
+        }
+        #endregion
     }
     #endregion
 }

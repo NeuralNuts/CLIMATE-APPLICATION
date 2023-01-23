@@ -28,5 +28,13 @@ namespace CLIMATE_DATA_BRAZIL.Services
             return await _weatherCollection.Find(new BsonDocument()).ToListAsync();
         }
         #endregion
+
+        #region Create Weather Async
+        public async Task CreateWeatherAsync(WeatherModel weather)
+        {
+            await _weatherCollection.InsertOneAsync(weather);
+            return;
+        }
+        #endregion
     }
 }
