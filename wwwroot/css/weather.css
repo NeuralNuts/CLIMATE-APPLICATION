@@ -19,6 +19,26 @@ textarea {
 }
 
 button {
+    font-family: Arial;
+    text-transform: uppercase;
+    border: solid;
+    color: white;
+    border-radius: 5px;
+    background-color: #1EE196;
+    border-width: 2px;
+    border-color: #23835e33;
+    cursor: pointer;
+    width: 120px;
+    height: 30px;
+}
+
+button:hover {
+    transition: 0.3s;
+    background-color: #e11e69d9;
+}
+
+.td-button {
+    border: none;
 }
 
 h2 {
@@ -26,5 +46,41 @@ h2 {
     text-transform: uppercase;
     font-family: Arial;
     color: #e11e69d9;
+    padding-left: 20px;
+}
+
+table {
+    color: black;
+    padding-top: 10px;
+    text-align: center;
+    font-family: Arial;
     padding-left: 10px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+th {
+    font-size: 10px;
+    border: solid;
+    border-width: 2px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: #e11e69d9;
+}
+
+td {
+    border-radius: 3px;
+    font-size: 10px;
+    border: solid;
+    border-width: 2px;
+    /*border-top: none;
+    border-left: none;
+    border-right: none;*/
+    border-color: #c6c6c6ce;
+}
+
+td:hover {
+    background-color: #c6c6c66d;
+    cursor: pointer;
 }
