@@ -11,8 +11,28 @@
         <div class="first-div">
             <div class="get-div">
                 <h2>Get weather</h2>
-                <textarea></textarea>
-                <button></button>
+                <table>
+                    <tr id="table-info">
+                        <th>Id</th>
+                        <th>Device Name</th>
+                        <th>Precipitation mm/h</th>
+                        <th>Time</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Temperature</th>
+                        <th>Atmospheric Pressure (kPa)</th>
+                        <th>Max Wind Speed (m/s)</th>
+                        <th>Solar Radiation (W/m2)</th>
+                        <th>Vapor Pressure (kPa)</th>
+                        <th>Humidity (%)</th>
+                        <th>Wind Direction (°)</th>
+                    </tr>
+
+                    <tbody id="weather-table">
+
+                    </tbody>
+
+                </table>
                 <hr />
             </div>
 
@@ -36,4 +56,42 @@
             </div>
         </div>
     </section>
+    <script>
+        
+        weatherArray = []
+
+        $.ajax({
+                type: "GET",
+                url: "@Url.Action("GetWeather", "Weather")",
+                dataType: "JSON",
+                success: function (response) {
+                    weatherArray = response
+                    buildProductTabel(weatherArray)
+                    console.log(weatherArray)
+                }
+            })
+            function buildProductTabel(data) {
+                var table = document.getElementById('weather-table')
+                for (var i = 0; i < data.length; i++) {
+                var buttons = `<button>delete</button>`
+                    var row = `<tr>
+                                   <td>${data[i].id}</td>
+                                   <td>${data[i].device_name}</td>
+                                   <td>${data[i].precipitation_mm_h}$</td>
+                                   <td>${data[i].time}</td>
+                                   <td>${data[i].latitude}</td>
+                                   <td>${data[i].longitude}</td>
+                                   <td>${data[i].temperature_C}</td>
+                                   <td>${data[i].atmosphericPressure_kPa}</td>
+                                   <td>${data[i].maxWindSpeed_ms}</td>
+                                   <td>${data[i].solarRadiation_Wm2}</td>
+                                   <td>${data[i].vaporPressure_kPa}</td>
+                                   <td>${data[i].humidity_percentage}</td>
+                                   <td>${data[i].windDirection}</td>
+                                   <td class="td-button">${buttons}</td>
+                               </tr>`
+                    table.innerHTML += row
+                }
+            }
+    </script>
 </body>
