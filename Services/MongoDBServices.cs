@@ -10,7 +10,7 @@ namespace CLIMATE_DATA_BRAZIL.Services
     public class MongoDBServices
     {
         #region Setting The IMongoCollection To Weather
-        private readonly IMongoCollection<WeatherModel> _weatherCollection;
+        private readonly IMongoCollection<SensorDataModel> _weatherCollection;
         #endregion
 
         #region ConnectionURI, Database & Collection - Variables
@@ -18,19 +18,19 @@ namespace CLIMATE_DATA_BRAZIL.Services
         {
             MongoClient client = new MongoClient(mongodbSettings.Value.ConnectionURI);
             IMongoDatabase database = client.GetDatabase(mongodbSettings.Value.Database);
-            _weatherCollection = database.GetCollection<WeatherModel>(mongodbSettings.Value.Collection);
+            _weatherCollection = database.GetCollection<SensorDataModel>(mongodbSettings.Value.Collection);
         }
         #endregion
 
         #region Get Weather Aysnc
-        public async Task<List<WeatherModel>> GetWeatherAsync()
+        public async Task<List<SensorDataModel>> GetWeatherAsync()
         {
-            return await _weatherCollection.Find(new BsonDocument()).ToListAsync();
+            return await _weatherCollection.Find(new BsonDocument()).Limit(10).ToListAsync();
         }
         #endregion
 
         #region Create Weather Async
-        public async Task CreateWeatherAsync(WeatherModel weather)
+        public async Task CreateWeatherAsync(SensorDataModel weather)
         {
             await _weatherCollection.InsertOneAsync(weather);
             return;

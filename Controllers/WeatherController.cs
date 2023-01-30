@@ -31,7 +31,7 @@ namespace CLIMATE_DATA_BRAZIL.Controllers
 
         #region Http Get Weather
         [HttpGet]
-        public async Task<List<WeatherModel>> GetWeather()
+        public async Task<List<SensorDataModel>> GetWeather()
         {
             return await _mongodbServices.GetWeatherAsync();
         }
@@ -39,7 +39,7 @@ namespace CLIMATE_DATA_BRAZIL.Controllers
 
         #region Http Post Weather
         [HttpPost]
-        public async Task<IActionResult> PostWeather(WeatherModel weatherModel)
+        public async Task<IActionResult> PostWeather(SensorDataModel weatherModel)
         {
             await _mongodbServices.CreateWeatherAsync(weatherModel);
             return CreatedAtAction(nameof(GetWeather), new { id = weatherModel.Id }, weatherModel);
