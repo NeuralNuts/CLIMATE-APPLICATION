@@ -32,6 +32,10 @@ button {
     height: 30px;
 }
 
+.add-buttons {
+    margin-top: 10px;
+}
+
 button:hover {
     transition: 0.3s;
     background-color: #e11e69d9;
@@ -47,6 +51,39 @@ h2 {
     font-family: Arial;
     color: #e11e69d9;
     padding-left: 20px;
+}
+
+input {
+    width: 30%;
+    border: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 2px;
+    border-color: #b0b0b0ff;
+}
+
+input:hover {
+    transition: 0.5s;
+    border-color: #e11e69d9;
+}
+
+select {
+    width: 30.5%;
+    border-color: #b0b0b0ff;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+select:hover {
+    transition: 0.5s;
+    border-color: #e11e69d9;
+}
+
+h3 {
+    font-size: 15px;
+    font-family: Arial;
+    color: black;
 }
 
 table {
@@ -83,4 +120,9 @@ td {
 td:hover {
     background-color: #c6c6c66d;
     cursor: pointer;
+}
+
+.post-div {
+    display: grid;
+    padding-left: 10px;
 }

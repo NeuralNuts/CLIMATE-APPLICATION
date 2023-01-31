@@ -29,6 +29,15 @@ namespace CLIMATE_DATA_BRAZIL.Services
         }
         #endregion
 
+        #region Get Weather Aysnc
+        public async Task<List<SensorDataModel>> GetDeviceNameAsync()
+        {
+            SensorDataModel sensorDataModel = new SensorDataModel();
+            return await _weatherCollection.Find(new BsonDocument()).ToListAsync();
+        }
+        #endregion
+
+
         #region Create Weather Async
         public async Task CreateWeatherAsync(SensorDataModel weather)
         {
