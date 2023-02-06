@@ -2,7 +2,6 @@
 using MongoDB.Driver;
 using CLIMATE_DATA_BRAZIL.Controllers;
 using CLIMATE_DATA_BRAZIL.Models;
-using CLIMATE_DATA_BRAZIL.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Builder;
 #endregion
@@ -14,8 +13,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 #region Add Services To The Container 
 
-builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));
-builder.Services.AddSingleton<MongoDBServices>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
