@@ -16,15 +16,32 @@
 
 h2 {
     text-align: center;
-    font-size: 50px;
+    font-size: 30px;
     text-transform: uppercase;
     font-family: Arial;
     color: #e11e69d9;
     padding-left: 10px;
 }
 
+h4 {
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: Arial;
+    color: #1EE196;
+    padding-left: 10px;
+}
+
+img {
+    border: solid;
+    border-color: transparent;
+    border-radius: 10px;
+    padding-left: 27%;
+}
+
 p {
     text-align: center;
+    font-size: 15px;
     margin-top: -20px;
     padding-left: 10px;
     font-family: Arial;
@@ -35,5 +52,13 @@ hr {
     border: solid;
     border-color: #e11e69d9;
     width: 100vh;
+    border-width: 1.5px;
+}
+
+.black-hr {
+    text-align: center;
+    border: solid;
+    border-color: #1EE196;
+    width: 50vh;
     border-width: 1.5px;
 }
