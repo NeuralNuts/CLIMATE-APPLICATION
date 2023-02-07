@@ -18,6 +18,15 @@ textarea {
     margin-left: 10px;
 }
 
+.sensor-created {
+    display: none;
+    padding-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Arial;
+    color: #1EE196;
+}
+
 button {
     font-family: Arial;
     text-transform: uppercase;

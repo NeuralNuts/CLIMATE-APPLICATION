@@ -36,47 +36,54 @@
                 <hr />
             </div>
 
-            <div class="post-div">
-                <h2>Add new weather sensor</h2>
+            <div class="second-div">
+                <h2>Get max Precipitaion</h2>
                 <h3>Device name</h3>
-                <select>
+                <input id="device-name-input-2"/>
+                <hr />
+            </div>
 
-                </select>
+            <div class="post-div">
+
+                <h2>Post new weather sensor</h2>
+                <h3>Device name</h3>
+                <input id="device-name-input"/>
 
                 <h3>Precipitation</h3>
-                <input />
+                <input id="precipitation-input"/>
 
                 <h3>Time</h3>
-                <input />
+                <input id="time-input"/>
 
                 <h3>Latitude</h3>
-                <input />
+                <input id="latitude-input"/>
 
                 <h3>Longitude</h3>
-                <input />
+                <input id="longitude-input"/>
 
                 <h3>Temperature</h3>
-                <input />
+                <input id="temperature-input"/>
 
                 <h3>Atmospheric Pressure</h3>
-                <input />
+                <input id="atmospheric-pressure-input"/>
                  
                 <h3>Max Wind Speed</h3>
-                <input />
+                <input id="max-wind-speed"/>
 
                 <h3>Solar Radiation</h3>
-                <input />
+                <input id="solar-radiation"/>
 
                 <h3>Vapor Pressure</h3>
-                <input />
+                <input id="vapor-pressure"/>
 
                 <h3>Humidity</h3>
-                <input />
+                <input id="humidity-input"/>
 
                 <h3>Wind Direction</h3>
-                <input />
+                <input id="wind-direction-input"/>
 
                 <button class="add-buttons" id="add-weather">Add single</button>
+                <label class="sensor-created" id="sensor-created">Sensor Created</label>
                 <button class="add-buttons" id="batch-add-weather">Add manny</button>
 
                 <hr />
@@ -110,8 +117,88 @@
                     buildProductTabel(weatherArray)
                     console.log(weatherArray)
                 }
+        })
+
+        //$.ajax({
+        //        type: "GET",
+        //        url: "https://localhost:7033/api/Weather/GetMaxPrecipitation?device=Woodford_Sensor",
+        //        dataType: "JSON",
+        //        success: function (response) {
+        //            weatherArray = response
+        //            buildProductTabel(weatherArray)
+        //            console.log(weatherArray)
+        //        }
+        //})
+
+        $("#add-weather").click(function (event) {
+
+            var device_name_input = $("#device-name-input").val();
+            var precipitation_input = $("#precipitation-input").val();
+            var time_input = $("#time-input").val();
+            var latitude_input = $("#latitude-input").val();
+            var longitude_input = $("#longitude-input").val();
+            var temperature_input = $("#temperature-input").val();
+            var atmospheric_pressure_input = $("#atmospheric-pressure-input").val();
+            var max_wind_speed = $("#max-wind-speed").val();
+            var solar_radiation = $("#solar-radiation").val();
+            var vapor_pressure = $("#vapor-pressure").val();
+            var humidity_input = $("#humidity-input").val();
+            var wind_direction_input = $("#wind-direction-input").val();
+
+             var device_name_input_clear = $("#device-name-input").val("");
+            var precipitation_input_clear = $("#precipitation-input").val("");
+            var time_input_clear = $("#time-input").val("");
+            var latitude_input_clear = $("#latitude-input").val("");
+            var longitude_input_clear = $("#longitude-input").val("");
+            var temperature_input_clear = $("#temperature-input").val("");
+            var atmospheric_pressure_input_clear = $("#atmospheric-pressure-input").val("");
+            var max_wind_speed_clear = $("#max-wind-speed").val("");
+            var solar_radiation_clear = $("#solar-radiation").val("");
+            var vapor_pressure_clear = $("#vapor-pressure").val("");
+            var humidity_input_clear = $("#humidity-input").val("");
+            var wind_direction_input_clear = $("#wind-direction-input").val("");
+
+            var sensor_created = $("#sensor-created");
+
+            $.ajax({
+                type: "POST",
+                url: 'https://localhost:7033/api/Weather/PostWeatherToWebsite?&'
+                + 'Device=' + device_name_input + 
+                '&Precipitation_mm_h=' + precipitation_input + 
+                '&Time=' + time_input + 
+                '&Latitude=' + latitude_input + 
+                '&Longitude=' + longitude_input + 
+                '&Temperature_C=' + temperature_input + 
+                '&AtmosphericPressure_kPa=' + atmospheric_pressure_input +
+                '&MaxWindSpeed_ms=' + max_wind_speed +
+                '&SolarRadiation_Wm2=' + solar_radiation +
+                '&VaporPressure_kPa=' + vapor_pressure +
+                '&Humidity_percentage=' + humidity_input +
+                '&WindDirection=' + wind_direction_input,
+                dataType: "JSON",
+                success: function (response) {
+                    if (response != null){
+                        sensor_created.show()
+                        device_name_input_clear
+                        precipitation_input_clear
+                        time_input_clear
+                        latitude_input_clear
+                        longitude_input_clear
+                        temperature_input_clear
+                        atmospheric_pressure_input_clear
+                        max_wind_speed_clear
+                        solar_radiation_clear
+                        vapor_pressure_clear
+                        humidity_input_clear
+                        wind_direction_input_clear
+                        sensor_created.hide()
+                    }
+                    console.log(response)
+                }
             })
-            function buildProductTabel(data) {
+        });
+
+        function buildProductTabel(data) {
                 var table = document.getElementById('weather-table')
                 for (var i = 0; i < data.length; i++) {
                 var buttons = `<button>delete</button>`
@@ -133,6 +220,6 @@
                                </tr>`
                     table.innerHTML += row
                 }
-            }
+        }
     </script>
 </body>
