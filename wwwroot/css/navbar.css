@@ -1,9 +1,15 @@
 ﻿body {
-    background-image: url("../images/world-map.png");
     background-color: whitesmoke;
     background-size: cover;
     background-position-y: -180px;
     background-position-x: -50px;
+}
+
+.api{
+    width: 100.5%;
+    margin-bottom: -200px;
+    margin-top: -20px;
+    height: 100vh;
 }
 
 header {
@@ -27,11 +33,18 @@ header {
 }
 
 .logo {
-    margin-top: -7px;
     text-transform: uppercase;
+    font-size: 20px;
+    margin-left: -20px;
     color: whitesmoke;
-    width: 250vh;
-    margin-left: -122vh;
+    cursor: pointer;
+}
+
+.github {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: whitesmoke;
+    margin-left: 10px;
     cursor: pointer;
 }
 

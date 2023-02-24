@@ -18,26 +18,6 @@ namespace CLIMATE_DATA_BRAZIL.Controllers
             return View();
         }
 
-        public IActionResult WeatherPage()
-        {
-            return View();
-        }
-
-        public IActionResult RequirementsPage()
-        {
-            return View();
-        }
-
-        public IActionResult LoginPage()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
